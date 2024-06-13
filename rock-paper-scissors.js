@@ -5,14 +5,11 @@ function getComputerChoice() {
   console.log(choice);
   switch (choice) {
     case 0:
-      console.log("Computer : Rock");
-      break;
+      return "rock";
     case 1:
-      console.log("Computer : Paper");
-      break;
+      return "paper";
     case 2:
-      console.log("Computer : Scissors");
-      break;
+      return "scissors";
     default:
       break;
   }
@@ -20,7 +17,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Enter rock, paper or scissors : ");
-  console.log("Human : " + choice);
+  return choice.toLowerCase()
 }
 
 let humanScore = 0;
