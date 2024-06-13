@@ -17,7 +17,13 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Enter rock, paper or scissors : ");
-  return choice.toLowerCase()
+  choice = choice.toLowerCase();
+  console.log(choice + 'here');
+  while (choice != 'rock' && choice != 'paper' && choice != 'scissors') {
+    choice = prompt("Wrong selection ! \nEnter rock, paper or scissors : ");
+    choice = choice.toLowerCase();
+  }
+  return choice;
 }
 
 let humanScore = 0;
