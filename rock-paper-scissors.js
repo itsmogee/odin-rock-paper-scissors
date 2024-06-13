@@ -28,3 +28,24 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+// This function will play a single round
+function playRound(humanChoice, computerChoice) {
+  let winner = "draw";
+  if ((humanChoice == 'paper' && computerChoice == 'rock') || (humanChoice == 'scissors' && computerChoice == 'paper') || (humanChoice == 'rock' && computerChoice == 'scissors')) {
+    winner = "human";
+  } else if ((computerChoice == 'paper' && humanChoice == 'rock') || (computerChoice == 'scissors' && humanChoice == 'paper') || (computerChoice == 'rock' && humanChoice == 'scissors')) {
+    winner = "computer";
+  }
+  if (winner == 'human') {
+    console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+    humanScore += 1;
+  } else if (winner == 'computer') {
+    computerScore += 1;
+    console.log('Sorry you lose! ' + computerChoice + ' beats ' + humanChoice);
+  } else {
+    console.log('It was a draw ' + computerChoice + ' and ' + humanChoice + ' are equal');
+  }
+}
+
+playRound(getHumanChoice(), getComputerChoice())
