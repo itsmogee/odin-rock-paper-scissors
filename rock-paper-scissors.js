@@ -56,11 +56,23 @@ function playGame() {
   // locally define and initialize the scores
   let humanScore = 0;
   let computerScore = 0;
-    computerScore += 1;
-    console.log('Sorry you lose! ' + computerChoice + ' beats ' + humanChoice);
+
+  // Loop for 5 games
+  for (let i = 0; i < 5; i++) {
+    playRound(getHumanChoice(), getComputerChoice())
+  }
+
+  // Computer the final score
+  let cumulative_score = humanScore - computerScore;
+
+  // Determine overall winner and print final scores
+  if (cumulative_score < 0) {
+    console.log("The computer wins by " + computerScore + " to " + humanScore + ".");
+  } else if (cumulative_score > 0) {
+    console.log("You win by " + humanScore + " to " + computerScore + ".");
   } else {
-    console.log('It was a draw ' + computerChoice + ' and ' + humanChoice + ' are equal');
+    console.log("It was a draw " + humanScore + " - " + computerScore + ".");
   }
 }
 
-playRound(getHumanChoice(), getComputerChoice())
+playGame();
