@@ -27,6 +27,7 @@ function getHumanChoice() {
 // A game consists of 5 rounds
 function playGame() {
 
+  alert("You will play Rock-Paper-Scissors against the computer. A total of 5 rounds will be played and the winner announced. \n Begin !");
   // This function will play a single round
   playRound = function(humanChoice, computerChoice) {
 
@@ -42,13 +43,13 @@ function playGame() {
 
     // Update the scores and print the winner to console
     if (winner == 'human') {
-      console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+      alert('Computer : ' + computerChoice + '\nYou : ' + humanChoice + '\nYou win! ' + humanChoice + ' beats ' + computerChoice);
       humanScore += 1;
     } else if (winner == 'computer') {
       computerScore += 1;
-      console.log('Sorry you lose! ' + computerChoice + ' beats ' + humanChoice);
+      alert('Computer : ' + computerChoice + '\nYou : ' + humanChoice + '\nSorry you lose! ' + computerChoice + ' beats ' + humanChoice);
     } else {
-      console.log('It was a draw ' + computerChoice + ' and ' + humanChoice + ' are equal');
+      alert('Computer : ' + computerChoice + '\nYou : ' + humanChoice + '\nIt was a draw ' + computerChoice + ' and ' + humanChoice + ' are equal');
     }
 
   }
@@ -67,11 +68,11 @@ function playGame() {
 
   // Determine overall winner and print final scores
   if (cumulative_score < 0) {
-    console.log("The computer wins by " + computerScore + " to " + humanScore + ".");
+    alert("The computer wins by " + computerScore + " to " + humanScore + ".");
   } else if (cumulative_score > 0) {
-    console.log("You win by " + humanScore + " to " + computerScore + ".");
+    alert("You win by " + humanScore + " to " + computerScore + ".");
   } else {
-    console.log("It was a draw " + humanScore + " - " + computerScore + ".");
+    alert("It was a draw " + humanScore + " - " + computerScore + ".");
   }
 }
 
